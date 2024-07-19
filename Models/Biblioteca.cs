@@ -12,11 +12,16 @@ namespace Sistema_Biblioteca_.Models
         public int Id = ++ultimoId;
         public List<Libro> LibroList;
 
-        public void AgregarLibro()
-        { }
+        public void AgregarLibro(string titulo, string autor, string genero, int añoPublicacion, string isbn, int precio)
+        {
+            LibroList.Add(new Libro(titulo, autor, genero, añoPublicacion, isbn, precio));
+        }
 
-        public void Busqueda()
-        { }
+// incompleto 
+        public void Busqueda(string? busquedaTitulo)
+        { 
+             var encontrado = LibroList.Where(l => l.Titulo.Contains(busquedaTitulo)).ToList();
+        }
 
         public void EliminarLibro()
         { }
