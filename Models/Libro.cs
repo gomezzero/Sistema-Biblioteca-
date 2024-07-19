@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Biblioteca_.Models
 {
-    public class Libro
+    public class Libro : Publicacion
     {
         private static int ultimoId = 0;
         public int Id = ++ultimoId;
@@ -17,7 +17,12 @@ namespace Sistema_Biblioteca_.Models
 
         public Libro(string titulo, string autor, string genero, int añoPublicacion, string isbn, int precio)
         {
-
+            this.Titulo = titulo;
+            this.Autor = autor;
+            this.Genero = genero;
+            this.AñoPublicacion = añoPublicacion;
+            this.ISBN = isbn;
+            this.Precio = precio;
         }
 
         public double DescuentoLibro()
